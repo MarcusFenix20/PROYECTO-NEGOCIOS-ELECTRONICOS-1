@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pet Palace | Todo para tus Mascotas</title>
+
+    <!-- Custom stlylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Slick -->
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- nouislider -->
+    <link rel="stylesheet" href="css/nouislider.min.css">
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+
+
+</head>
+
+<body>
+
+    <!-- /HEADER -->
+    <header>
+        <!-- TOP HEADER -->
+        <div id="top-header">
+            <div class="container">
+                <ul class="header-links pull-left">
+                    <li><a><i class="fa fa-phone"></i> +52 449 928 9336</a></li>
+                    <li><a href="https://mail.google.com/"><i class="fa fa-envelope-o"></i> petspalace@gmail.com</a>
+                    </li>
+                    <li><a href="maps.google.com"><i class="fa fa-map-marker"></i> Av. Adolfo López Mateos </a></li>
+                </ul>
+                <ul class="header-links pull-right">
+                    <li><a><i class="fa fa-dollar"></i> MXN</a></li>
+                    <li><a href="userprofile.html"><i class="fa fa-user-o"></i> My Account</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /TOP HEADER -->
+
+        <!-- MAIN HEADER -->
+        <div id="header">
+            <!-- container -->
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+                    <!-- LOGO -->
+                    <div class="col-md-3">
+                        <div class="header-logo">
+                            <a href="index.html" class="logo">
+                                <img src="img/logo6.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- /LOGO -->
+
+                    <!-- SEARCH BAR -->
+                    <div class="col-md-6">
+                        <div class="header-search">
+                            <form>
+                                <select class="input-select">
+                                    <option value="0">Category</option>
+                                    <option value="1">Accessories</option>
+                                    <option value="1">Clothes</option>
+                                    <option value="1">Health & Care</option>
+                                    <option value="1">Home</option>
+                                    <option value="1">Transport</option>
+                                </select>
+                                <input class="input" placeholder="Search here">
+                                <button class="search-btn">Search</button>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- /SEARCH BAR -->
+
+                    <!-- ACCOUNT -->
+                    <div class="col-md-3 clearfix">
+                        <div class="header-ctn">
+                            <!-- Wishlist -->
+                            <div>
+                                <a href="wishlist.html">
+                                    <i class="fa fa-heart-o"></i>
+                                    <span>Wishlist</span>
+                                    <div class="qty wishlist-qty">0</div>
+                                </a>
+                            </div>
+                            <!-- /Wishlist -->
+
+                            <!-- Cart -->
+                            <div class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    <span>Your Cart</span>
+                                    <div class="qty cart-qty">0</div> <!-- CAMBIO: clase única -->
+                                </a>
+                                <div class="cart-dropdown">
+                                    <div class="cart-list">
+                                        <!-- Los productos se agregarán aquí con JavaScript -->
+                                    </div>
+                                    <div class="cart-summary">
+                                        <small>0 Item(s) selected</small>
+                                        <h5>SUBTOTAL: $0.00</h5>
+                                    </div>
+                                    <div class="cart-btns">
+                                        <a href="#">View Cart</a>
+                                        <a href="checkout.html">Checkout <i class="fa fa-arrow-circle-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /Cart -->
+
+
+                            <!-- Menu Toogle -->
+                            <div class="menu-toggle">
+                                <a href="#">
+                                    <i class="fa fa-bars"></i>
+                                    <span>Menu</span>
+                                </a>
+                            </div>
+                            <!-- /Menu Toogle -->
+                        </div>
+                    </div>
+                    <!-- /ACCOUNT -->
+                </div>
+                <!-- row -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- /MAIN HEADER -->
+    </header>
+    <!-- /HEADER -->
+
+    <!-- Barra de Search Fija -->
+    <div class="sticky-space"></div>
+
+    <!-- NAVIGATION -->
+    <!-- <nav id="navigation"> -->
+    <!-- container -->
+    <div class="container">
+        <!-- responsive-nav -->
+        <div id="responsive-nav">
+            <!-- NAV -->
+            <ul class="main-nav nav navbar-nav">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="general.html">General</a></li>
+                <li><a href="offers.html">Offers</a></li>
+                <li><a href="dogs.html">Dogs</a></li>
+                <li><a href="cats.html">Cats</a></li>
+                <li><a href="rodents.html">Rodents</a></li>
+                <li><a href="fishes.html">Fishes</a></li>
+                <li><a href="birds.html">Birds</a></li>
+            </ul>
+            <!-- /NAV -->
+        </div>
+        <!-- /responsive-nav -->
+    </div>
+    <!-- /container -->
+    </nav>
+    <!-- /NAVIGATION -->
+
+    <!-- BREADCRUMB -->
+    <div id="breadcrumb" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="breadcrumb-header">Order</h3>
+                    <ul class="breadcrumb-tree">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active">Orders</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /BREADCRUMB -->
+
+    <!-- SECTION -->
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <!-- Shipping Form -->
+                <div class="col-md-7">
+                    <div class="billing-details">
+                        <div class="section-title">
+                            <h3 class="title">Shipping address</h3>
+                        </div>
+                        <div class="form-group"><input class="input" type="text" placeholder="First Name"></div>
+                        <div class="form-group"><input class="input" type="text" placeholder="Last Name"></div>
+                        <div class="form-group"><input class="input" type="email" placeholder="Email"></div>
+                        <div class="form-group"><input class="input" type="text" placeholder="Address"></div>
+                        <div class="form-group"><input class="input" type="text" placeholder="City"></div>
+                        <div class="form-group"><input class="input" type="text" placeholder="Country"></div>
+                        <div class="form-group"><input class="input" type="tel" placeholder="Phone"></div>
+                    </div>
+
+                    <div class="shiping-details">
+                        <div class="section-title">
+                            <h3 class="title">Shipping Address</h3>
+                        </div>
+                        <div class="input-checkbox">
+                            <input type="checkbox" id="shiping-address">
+                            <label for="shiping-address">
+                                <span></span>
+                                Send to a different address?
+                            </label>
+                            <div class="caption">
+                                <div class="form-group"><input class="input" type="text" placeholder="First Name"></div>
+                                <div class="form-group"><input class="input" type="text" placeholder="Last Name"></div>
+                                <div class="form-group"><input class="input" type="email" placeholder="Email"></div>
+                                <div class="form-group"><input class="input" type="text" placeholder="Address"></div>
+                                <div class="form-group"><input class="input" type="text" placeholder="City"></div>
+                                <div class="form-group"><input class="input" type="text" placeholder="Country"></div>
+                                <div class="form-group"><input class="input" type="tel" placeholder="Phone"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-notes">
+                        <textarea class="input" placeholder="Order Notes"></textarea>
+                    </div>
+                </div>
+                <!-- /Shipping Form -->
+
+                <!-- Order Summary -->
+                <div class="col-md-5 order-details">
+                    <div class="section-title text-center">
+                        <h3 class="title">Your Order</h3>
+                    </div>
+                    <div class="order-summary">
+                        <div class="order-col">
+                            <div><strong>PRODUCT</strong></div>
+                            <div><strong>TOTAL</strong></div>
+                        </div>
+                        <div class="order-products"></div>
+                        <div class="order-col">
+                            <div>Send</div>
+                            <div><strong>FREE</strong></div>
+                        </div>
+                        <div class="order-col">
+                            <div><strong>TOTAL</strong></div>
+                            <div><strong class="order-total">$0.00</strong></div>
+                        </div>
+                    </div>
+
+                    <div class="payment-method">
+                        <div class="input-radio">
+                            <input type="radio" name="payment" id="payment-1">
+                            <label for="payment-1"><span></span>Direct Bank Transfer</label>
+                            <div class="caption">
+                                <p>All your data is protected...</p>
+                            </div>
+                        </div>
+                        <div class="input-radio">
+                            <input type="radio" name="payment" id="payment-2">
+                            <label for="payment-2"><span></span>Check Payment</label>
+                            <div class="caption">
+                                <p>All your data is protected...</p>
+                            </div>
+                        </div>
+                        <div class="input-radio">
+                            <input type="radio" name="payment" id="payment-3">
+                            <label for="payment-3"><span></span>PayPal</label>
+                            <div class="caption">
+                                <p>All your data is protected...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-checkbox">
+                        <input type="checkbox" id="terms">
+                        <label for="terms">
+                            <span></span>
+                            I have read and agree to the <a href="#">terms and conditions</a>
+                        </label>
+                    </div>
+                    <a href="#" class="primary-btn order-submit" id="btnCheckout">Order</a>
+                </div>
+                <!-- /Order Summary -->
+            </div>
+        </div>
+    </div>
+    <!-- /SECTION -->
+
+    <!-- Modal del formulario de registro -->
+    <div id="modalRegistro" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="cerrarModal()">&times;</span>
+            <section class="registro">
+                <h2>Regístrate en Pet Palace</h2>
+                <form id="registroForm">
+                    <!-- Campos de registro -->
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+
+                    <label for="domicilio">Domicilio:</label>
+                    <input type="text" id="domicilio" name="domicilio" required>
+
+                    <label for="correo">Correo electrónico (Gmail):</label>
+                    <input type="email" id="correo" name="correo" pattern=".+@gmail\.com" required>
+
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" required>
+
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <label for="confirmPassword">Confirmar contraseña:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+                    <button type="submit">Registrarse</button>
+                    <p id="mensajeRegistro" class="mensaje-registrado"></p>
+
+                    <p class="alternar-modal">
+                        ¿Ya tienes una cuenta? <a href="#" onclick="cambiarAlogin()">Inicia sesión aquí</a>
+                    </p>
+                </form>
+            </section>
+        </div>
+    </div>
+
+
+    <!-- Modal de inicio de sesión -->
+    <div id="modalLogin" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="cerrarLogin()">&times;</span>
+            <section class="registro">
+                <h2>Iniciar sesión</h2>
+                <form id="loginForm">
+                    <label for="loginTelefono">Teléfono:</label>
+                    <input type="tel" id="loginTelefono" required>
+
+                    <label for="loginPassword">Contraseña:</label>
+                    <input type="password" id="loginPassword" required>
+
+                    <button type="submit">Ingresar</button>
+                    <p id="mensajeLogin" class="mensaje-registrado"></p>
+
+                    <p class="alternar-modal">
+                        ¿No tienes una cuenta? <a href="#" onclick="cambiarAregistro()">Regístrate aquí</a>
+                    </p>
+                </form>
+            </section>
+        </div>
+    </div>
+
+
+    <!-- NEWSLETTER -->
+    <div id="newsletter" class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="newsletter">
+                        <p>Send your comments to <strong>PetPalace</strong></p>
+                        <form>
+                            <input class="input" type="email" placeholder="Enter your email">
+                            <button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /NEWSLETTER -->
+
+    <!-- FOOTER -->
+    <footer id="footer">
+        <!-- top footer -->
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <!-- About Us -->
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h3 class="footer-title">Sobre Nosotros</h3>
+                            <p>PetPalace es una tienda en línea para productos de mascotas, con directorio de
+                                veterinarios y estilistas para tus compañeros peludos.</p>
+                            <ul class="footer-links">
+                                <li><a href="#"><i class="fa fa-map-marker"></i> ITA, Aguascalientes, México</a></li>
+                                <li><a href="#"><i class="fa fa-phone"></i> +52 449 928 9336</a></li>
+                                <li><a href="#"><i class="fa fa-envelope-o"></i> petspalace@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Categorías -->
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h3 class="footer-title">Categorías</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">Accesorios</a></li>
+                                <li><a href="#">Ropa</a></li>
+                                <li><a href="#">Salud y Cuidado</a></li>
+                                <li><a href="#">Transporte</a></li>
+                                <li><a href="#">Hogar</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="clearfix visible-xs"></div>
+
+                    <!-- Información -->
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h3 class="footer-title">Información</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">Nosotros</a></li>
+                                <li><a href="#">Contacto</a></li>
+                                <li><a href="#">Política de Privacidad</a></li>
+                                <li><a href="#">Términos y Condiciones</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Servicios -->
+                    <div class="col-md-3 col-xs-6">
+                        <div class="footer">
+                            <h3 class="footer-title">Servicio</h3>
+                            <ul class="footer-links">
+                                <li><a href="#">Mi Cuenta</a></li>
+                                <li><a href="#">Carrito</a></li>
+                                <li><a href="#">Wishlist</a></li>
+                                <li><a href="#">Ayuda</a></li>
+                                <li><a href="https://maps.app.goo.gl/k5ZtDzjFcVZyq3sV6" target="_blank">
+                                        <i class="fas fa-map-marked-alt"></i> Ubicación</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- bottom footer -->
+        <div id="bottom-footer" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <!-- Iconos de métodos de pago -->
+                        <ul class="footer-payments">
+                            <li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
+                            <li><a href="#"><i class="fa fa-credit-card"></i></a></li>
+                            <li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
+                            <li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
+                            <li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
+                            <li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
+                        </ul>
+                        <span class="copyright">
+                            &copy;
+                            <script>document.write(new Date().getFullYear());</script> Todos los derechos reservados |
+                            Hecho <i class="fa fa-heart-o" aria-hidden="true"></i> por
+                            <a href="https://aguascalientes.tecnm.mx/" target="_blank">TecNM</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER -->
+
+    <!-- Redes sociales y soporte -->
+    <div class="social-floating">
+        <!-- Carrito -->
+        <a href="checkout.html" class="floating-cart" title="Ver carrito">
+            <i class="fa fa-shopping-cart"></i>
+            <span class="cart-count">2</span>
+        </a>
+
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/profile.php?id=61578271885148
+" class="facebook" target="_blank" title="Facebook">
+            <i class="fa fa-facebook"></i>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/524499289336" class="whatsapp" target="_blank" title="WhatsApp">
+            <i class="fa fa-whatsapp"></i>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/" class="instagram" target="_blank" title="Instagram">
+            <i class="fa fa-instagram"></i>
+        </a>
+
+        <!-- Maps -->
+        <a href="https://maps.google.com" class="maps" target="_blank" title="Ubicación">
+            <i class="fa fa-map-marker"></i>
+        </a>
+    </div>
+
+    <!-- Script de acciones -->
+    <script src="js/registroformulario.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/nouislider.min.js"></script>
+    <script src="js/jquery.zoom.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/cart-handler.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const orderProducts = document.querySelector(".order-products");
+            const orderTotal = document.querySelector(".order-total");
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            let total = 0;
+            orderProducts.innerHTML = "";
+
+            cart.forEach(item => {
+    const price = parseFloat(item.price);
+    const row = document.createElement("div");
+    row.classList.add("order-col");
+    row.innerHTML = `<div>1x ${item.name}</div><div>$${price.toFixed(2)}</div>`;
+    total += price;
+    orderProducts.appendChild(row);
+});
+
+
+            orderTotal.textContent = `$${total.toFixed(2)}`;
+
+            // Botón Order
+            const btnCheckout = document.getElementById("btnCheckout");
+            btnCheckout.addEventListener("click", function (e) {
+                e.preventDefault();
+
+                const camposLlenos = [...document.querySelectorAll(".billing-details .input")]
+                    .every(input => input.value.trim() !== "");
+
+                if (!camposLlenos) {
+                    alert("Por favor llena todos los campos de envío.");
+                    return;
+                }
+
+                const logueado = localStorage.getItem("logueado");
+
+                if (logueado === "true") {
+                    window.location.href = "pedidosimulacion.html";
+                } else {
+                    if (typeof abrirModal === "function") {
+                        abrirModal();
+                    } else {
+                        alert("Debes iniciar sesión o registrarte para continuar.");
+                    }
+                }
+            });
+        });
+
+        
+    </script>
+
+
+</body>
+
+</html>

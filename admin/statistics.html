@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadísticas - Panel de Administración</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/nouislider.min.css">
+    <link rel="stylesheet" href="../css/slick-theme.css">
+    <link rel="stylesheet" href="../css/slick.css">
+    <link rel="stylesheet" href="../css/userprofile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        /* Establecer tamaño fijo para los canvas de los gráficos */
+        .card-body canvas {
+            width: 80% !important;
+            /* 80% del tamaño original */
+            height: 300px !important;
+            /* Altura fija de 300px */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Barra lateral de navegación -->
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar">
+                <div class="position-sticky">
+                    <div class="text-center py-4">
+                        <img src="../img/logo6.png" alt="Logo Pet Palace" class="mb-3" style="width: 80px;">
+                        <h4 class="text-white">Administrador</h4>
+                    </div>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="admin-panel.html">
+                                <i class="fa fa-tachometer"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="clients.html">
+                                <i class="fa fa-users"></i> Usuarios
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="products.html">
+                                <i class="fa fa-paw"></i> Productos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="orders.html">
+                                <i class="fa fa-shopping-cart"></i> Pedidos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="statistics.html">
+                                <i class="fa fa-bar-chart"></i> Reportes
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="logs.html">
+                                <i class="fa fa-cog"></i> Bitacoras de Movimientos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="login.html">
+                                <i class="fa fa-sign-out"></i> Cerrar Sesión
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Contenido principal -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <!-- Barra superior -->
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2"><i class="fa fa-tachometer"></i> Estadísticas</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">
+                            <i class="fa fa-download"></i> Exportar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Gráfico de Ventas por Mes -->
+                <div class="card mb-4">
+                    <div class="card-header"><i class="fa fa-line-chart"></i> Ventas por Mes</div>
+                    <div class="card-body">
+                        <canvas id="salesChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Gráfico de Productos Más Vendidos -->
+                <div class="card mb-4">
+                    <div class="card-header"><i class="fa fa-pie-chart"></i> Productos Más Vendidos</div>
+                    <div class="card-body">
+                        <canvas id="productChart"></canvas>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Scripts para gráficos -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Gráfico de Ventas por Mes
+        new Chart(document.getElementById('salesChart'), {
+            type: 'line',
+            data: {
+                labels: ['Enero', 'Febrero', 'Marzo'],
+                datasets: [{
+                    label: 'Ventas',
+                    data: [10, 20, 30],
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false, // Para que se adapte al contenedor
+                scales: {
+                    x: { // Asegura que el eje X sea responsivo
+                        beginAtZero: true
+                    },
+                    y: { // Asegura que el eje Y sea responsivo
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Gráfico de Productos Más Vendidos
+        new Chart(document.getElementById('productChart'), {
+            type: 'pie',
+            data: {
+                labels: ['Producto 1', 'Producto 2', 'Producto 3'],
+                datasets: [{
+                    label: 'Ventas',
+                    data: [12, 19, 3],
+                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false, // Para que se adapte al contenedor
+            }
+        });
+    </script>
+</body>
+
+</html>

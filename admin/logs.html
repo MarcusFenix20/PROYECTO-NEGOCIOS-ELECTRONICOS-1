@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitácora de Movimientos - Panel de Administración</title>
+    <!-- Vincula los archivos de estilo existentes -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/nouislider.min.css">
+    <link rel="stylesheet" href="../css/slick-theme.css">
+    <link rel="stylesheet" href="../css/slick.css">
+    <link rel="stylesheet" href="../css/userprofile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+    <!-- Contenedor principal -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Barra lateral de navegación -->
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar">
+                <div class="position-sticky">
+                    <div class="text-center py-4">
+                        <img src="../img/logo6.png" alt="Logo Pet Palace" class="mb-3" style="width: 80px;">
+                        <h4 class="text-white">Administrador</h4>
+                    </div>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="admin-panel.html">
+                                <i class="fa fa-tachometer"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="clients.html">
+                                <i class="fa fa-users"></i> Usuarios
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="products.html">
+                                <i class="fa fa-paw"></i> Productos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="orders.html">
+                                <i class="fa fa-shopping-cart"></i> Pedidos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="statistics.html">
+                                <i class="fa fa-bar-chart"></i> Reportes
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="logs.html">
+                                <i class="fa fa-cog"></i> Bitacoras de Movimientos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="login.html">
+                                <i class="fa fa-sign-out"></i> Cerrar Sesión
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Contenido principal -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <h2>Bitácora de Movimientos</h2>
+
+                <!-- Tabla de bitácora -->
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Usuario</th>
+                            <th>Acción</th>
+                            <th>Fecha y Hora</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Administrador</td>
+                            <td>Modificación de producto</td>
+                            <td>2023-01-01 10:00</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Usuario A</td>
+                            <td>Eliminación de producto</td>
+                            <td>2023-01-02 11:15</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Usuario B</td>
+                            <td>Creación de pedido</td>
+                            <td>2023-01-03 14:30</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </main>
+        </div>
+    </div>
+
+    <!-- Scripts necesarios -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

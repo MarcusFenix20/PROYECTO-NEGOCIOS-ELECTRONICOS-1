@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pet Palace | Todo para tus Mascotas</title>
+
+    <link rel="stylesheet" href="css/styleindex.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+</head>
+
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <div class="header-logo">
+            <a href="boceto.html" class="logo">
+                <img src="img/LOGO PET PALACE.jpg" alt="Logo Pet Palace">
+            </a>
+        </div>
+        <h1>Pet Palace</h1>
+    </header>
+
+    <!-- CTA flotantes -->
+    <a href="#" class="cta-fixed" id="btnCompra">¡Compra ahora!</a>
+    <a href="#" class="cta-more" onclick="abrirModal()">Más información</a>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h2>Todo para consentir a tu mascota</h2>
+        <p>Accesorios, alimento y cuidado para perros, gatos, aves y más.</p>
+        <p style="margin-top: 15px;">Entrega rápida y segura hasta tu puerta</p>
+        <p>Más de 1000 productos disponibles</p>
+    </section>
+
+    <!-- Carrusel de categorías -->
+    <section class="carousel-container" id="categorias">
+        <div class="carousel">
+            <img src="img/Perros Felices.jpg" alt="Perros felices">
+            <img src="https://www.bing.com/th/id/OIP.gD9Pv2O4dIbjkwdUqxg9EgHaE7?w=247&h=211&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2"
+                alt="Gato descansando">
+            <img src="https://th.bing.com/th/id/OIP.ThY8o3p3FfRDaS_7qxhsrwHaFj?w=232&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+                alt="Roedor adorable">
+            <img src="https://th.bing.com/th/id/OIP.kuhV4VRUt8KbJdoxPqsucAHaEK?w=275&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+                alt="Mascota con dueño">
+            <img src="https://th.bing.com/th/id/OIP.YiW23XyWLyunyum5WFVqBwHaE7?w=266&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+                alt="Perros jugando al aire libre">
+
+            <!-- Duplicados para el bucle infinito -->
+            <img src="img/Perros Felices.jpg" alt="Perros felices">
+            <img src="https://www.bing.com/th/id/OIP.gD9Pv2O4dIbjkwdUqxg9EgHaE7?w=247&h=211&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2"
+                alt="Gato descansando">
+            <img src="https://th.bing.com/th/id/OIP.ThY8o3p3FfRDaS_7qxhsrwHaFj?w=232&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+                alt="Roedor adorable">
+            <img src="https://th.bing.com/th/id/OIP.kuhV4VRUt8KbJdoxPqsucAHaEK?w=275&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+                alt="Mascota con dueño">
+            <img src="https://th.bing.com/th/id/OIP.YiW23XyWLyunyum5WFVqBwHaE7?w=266&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+                alt="Perros jugando al aire libre">
+        </div>
+    </section>
+
+
+    <!-- Productos destacados -->
+    <section class="products-section">
+        <h2>Productos Destacados</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="https://th.bing.com/th/id/OIP.H9FK3ePGgQFwbNK4Kjs23AAAAA?w=216&h=216&c=7&r=0&o=7&pid=1.7&rm=3"
+                    alt="Correa para perros">
+                <h3>Correa resistente</h3>
+                <p>$179.90 MXN</p>
+            </div>
+            <div class="product-card">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.9ytUSmcqdbZ8i0HPSZuZCAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="Comida para gatos">
+                <h3>Alimento para gatos</h3>
+                <p>$249.90 MXN</p>
+            </div>
+            <div class="product-card">
+                <img src="https://th.bing.com/th/id/OIP.R2VrTcQEqlwQLiSVw7IAUQHaGF?w=196&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+                    alt="Colchon para perro">
+                <h3>Colchón para perro</h3>
+                <p>$299.90 MXN</p>
+            </div>
+            <div class="product-card">
+                <img src="https://img.kwcdn.com/product/fancy/17e0e327-38dd-4516-89a5-ac70cbeffd32.jpg?imageView2/2/w/800/q/70/format/webp"
+                    alt="Jaula para pajaros">
+                <h3>Jaula portátil para transportar aves</h3>
+                <p>$279.90 MXN</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal del formulario -->
+    <div id="modalRegistro" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="cerrarModal()">&times;</span>
+            <section class="registro">
+                <h2>Regístrate en Pet Palace</h2>
+                <form id="registroForm">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required>
+
+                    <label for="domicilio">Domicilio:</label>
+                    <input type="text" id="domicilio" name="domicilio" placeholder="Ej. Calle 123, Colonia, CP"
+                        required>
+
+                    <label for="correo">Correo electrónico (Gmail):</label>
+                    <input type="email" id="correo" name="correo" pattern=".+@gmail\.com"
+                        placeholder="ejemplo@gmail.com" required>
+
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}"
+                        placeholder="10 dígitos sin espacios" required>
+
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" placeholder="Crea una contraseña segura"
+                        required>
+
+                    <label for="confirmPassword">Confirmar contraseña:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword"
+                        placeholder="Confirma tu contraseña" required>
+
+                    <button type="submit">Registrarse</button>
+                    <p id="mensajeRegistro" class="mensaje-registrado"></p>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <!-- Modal de inicio de sesión -->
+    <div id="modalLogin" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="cerrarLogin()">&times;</span>
+            <section class="registro">
+                <h2>Iniciar sesión</h2>
+                <form id="loginForm">
+                    <label for="loginTelefono">Teléfono:</label>
+                    <input type="tel" id="loginTelefono" required placeholder="10 dígitos">
+
+                    <label for="loginPassword">Contraseña:</label>
+                    <input type="password" id="loginPassword" required placeholder="Tu contraseña">
+
+                    <button type="submit">Ingresar</button>
+                    <p id="mensajeLogin" class="mensaje-registrado"></p>
+                </form>
+            </section>
+        </div>
+    </div>
+
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>
+                <i class="fas fa-map-marker-alt"></i> ITA, Aguascalientes, México |
+                <i class="fas fa-phone-alt"></i> +52 449 928 9336 |
+                <i class="fas fa-envelope"></i> petspalace@gmail.com
+            </p>
+            <p>
+                <a href="https://maps.app.goo.gl/k5ZtDzjFcVZyq3sV6" target="_blank">
+                    <i class="fas fa-map-marked-alt"></i> Ver ubicación en Google Maps
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Redes sociales flotantes -->
+    <div class="social-floating">
+        <a href="https://www.facebook.com/profile.php?id=61578271885148" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/1234567890" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.google.com/maps/place/Instituto+Tecnológico+de+Aguascalientes" target="_blank"
+            class="maps"><i class="fas fa-map-marker-alt"></i></a>
+    </div>
+
+    <!-- Script de acciones -->
+    <script src="js/main.js"></script>
+    <script src="js/modalboseto.js"></script>
+    <script src="js/registroboseto.js"></script>
+
+</body>
+
+</html>

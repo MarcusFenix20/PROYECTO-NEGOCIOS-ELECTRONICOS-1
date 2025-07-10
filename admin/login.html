@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión y Registro</title>
+
+    <!-- Fuentes y CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body class="bg-light">
+
+
+    <!-- Formularios de Login y Registro -->
+    <div class="contenedor__login-register card p-4 shadow-lg">
+        <!-- Login -->
+        <form id="loginForm" class="formulario__login">
+            <div class="text-center mb-4">
+                <img src="../img/logo6.png" alt="Logo Pet Palace" class="mb-3" style="width: 100px;">
+                <h3>Iniciar Sesión</h3>
+            </div>
+            <div class="form-group mb-3">
+                <label for="role"><i class="fa fa-users"></i> Ingresar como</label>
+                <select id="role" class="form-control" required>
+                    <option value="user">Usuario</option>
+                    <option value="admin">Administrador</option>
+                </select>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" id="username" class="form-control" placeholder="Correo o Usuario" required>
+                <label for="username"><i class="fa fa-user"></i> Correo o Usuario</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" id="password" class="form-control" placeholder="Contraseña" required>
+                <label for="password"><i class="fa fa-lock"></i> Contraseña</label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block w-100">Entrar</button>
+            <p class="text-center mt-3"><a href="#">¿Olvidaste tu contraseña?</a></p>
+            <button class="btn btn-link w-100 mt-2" type="button"
+                onclick="window.location.href='../index.html'">Regresar</button>
+            <div id="message" class="alert mt-3" style="display: none;"></div>
+        </form>
+
+
+
+        </main>
+
+        <script>
+
+
+            // Validación de login
+            document.getElementById('loginForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+                const role = document.getElementById('role').value;
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+                const message = document.getElementById('message');
+
+                message.style.display = "none";
+                message.classList.remove("alert-success", "alert-danger");
+
+                if (role === "admin" && username === "admin" && password === "admin123") {
+                    message.style.display = "block";
+                    message.classList.add("alert-success");
+                    message.textContent = "Inicio de sesión como Administrador exitoso.";
+                    setTimeout(() => window.location.href = "admin-panel.html", 2000);
+                } else if (role === "user" && username === "user" && password === "user123") {
+                    message.style.display = "block";
+                    message.classList.add("alert-success");
+                    message.textContent = "Inicio de sesión como Usuario exitoso.";
+                    setTimeout(() => window.location.href = "../index.html", 2000);
+                } else {
+                    message.style.display = "block";
+                    message.classList.add("alert-danger");
+                    message.textContent = "Usuario o contraseña incorrectos.";
+                }
+            });
+        </script>
+
+</body>
+
+</html>
