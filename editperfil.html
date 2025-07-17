@@ -4,22 +4,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Pet Palace | Seguimiento de Pedido</title>
-    <!-- Custom stlylesheet -->
+    <title>Pet Palace | Editar Perfil</title>
+
+    <!-- CSS y librerías que usas -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <!-- Slick -->
-    <link rel="stylesheet" href="css/slick.css">
-    <link rel="stylesheet" href="css/slick-theme.css">
-    <!-- Google font -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
-    <!-- Bootstrap -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- nouislider -->
-    <link rel="stylesheet" href="css/nouislider.min.css">
-    <!-- Font Awesome Icon -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-
 </head>
 
 <body>
@@ -31,8 +21,7 @@
             <div class="container">
                 <ul class="header-links pull-left">
                     <li><a><i class="fa fa-phone"></i> +52 449 928 9336</a></li>
-                    <li><a href="https://mail.google.com/"><i class="fa fa-envelope-o"></i> petspalace@gmail.com</a>
-                    </li>
+                    <li><a href="https://mail.google.com/"><i class="fa fa-envelope-o"></i> petspalace@gmail.com</a></li>
                     <li><a href="maps.google.com"><i class="fa fa-map-marker"></i> Av. Adolfo López Mateos </a></li>
                 </ul>
                 <ul class="header-links pull-right">
@@ -45,9 +34,7 @@
 
         <!-- MAIN HEADER -->
         <div id="header">
-            <!-- container -->
             <div class="container">
-                <!-- row -->
                 <div class="row">
                     <!-- LOGO -->
                     <div class="col-md-3">
@@ -57,7 +44,6 @@
                             </a>
                         </div>
                     </div>
-                    <!-- /LOGO -->
 
                     <!-- SEARCH BAR -->
                     <div class="col-md-6">
@@ -76,12 +62,10 @@
                             </form>
                         </div>
                     </div>
-                    <!-- /SEARCH BAR -->
 
                     <!-- ACCOUNT -->
                     <div class="col-md-3 clearfix">
                         <div class="header-ctn">
-                            <!-- Wishlist -->
                             <div>
                                 <a href="wishlist.html">
                                     <i class="fa fa-heart-o"></i>
@@ -89,18 +73,15 @@
                                     <div class="qty wishlist-qty">0</div>
                                 </a>
                             </div>
-                            <!-- /Wishlist -->
 
-                            <!-- Cart -->
                             <div class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                                     <i class="fa fa-shopping-cart"></i>
                                     <span>Your Cart</span>
-                                    <div class="qty cart-qty">0</div> <!-- CAMBIO: clase única -->
+                                    <div class="qty cart-qty">0</div>
                                 </a>
                                 <div class="cart-dropdown">
                                     <div class="cart-list">
-                                        <!-- Los productos se agregarán aquí con JavaScript -->
                                     </div>
                                     <div class="cart-summary">
                                         <small>0 Item(s) selected</small>
@@ -112,115 +93,137 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- /Cart -->
 
-
-                            <!-- Menu Toogle -->
                             <div class="menu-toggle">
                                 <a href="#">
                                     <i class="fa fa-bars"></i>
                                     <span>Menu</span>
                                 </a>
                             </div>
-                            <!-- /Menu Toogle -->
                         </div>
                     </div>
-                    <!-- /ACCOUNT -->
                 </div>
-                <!-- row -->
             </div>
-            <!-- container -->
         </div>
-        <!-- /MAIN HEADER -->
     </header>
     <!-- /HEADER -->
 
+    <div class="container" style="margin-top: 2rem;">
+        <div class="main-body">
 
-    <div class="container">
-        <h1>Seguimiento de Pedido - Pet Palace</h1>
-
-        <section class="seccion">
-            <h2>Resumen del Usuario</h2>
-            <div class="info">
-                <p><strong>Nombre:</strong> Angel Fabian Moreno Diaz</p>
-                <p><strong>Correo:</strong> 22150114@aguascalientes.tecnm.mx</p>
-                <p><strong>Teléfono:</strong> +52 449 928 9336</p>
-            </div>
-        </section>
-
-        <section class="seccion">
-            <h2>Dirección de Envío</h2>
-            <div class="info">
-                <p><strong>Dirección:</strong> MIRADOR DE LAS CULTURAS, CULTURA OLMECA 111 INT 25</p>
-                <p><strong>Ciudad:</strong> Aguascalientes</p>
-                <p><strong>País:</strong> México</p>
-            </div>
-        </section>
-
-        <section class="seccion">
-            <h2>Productos en tu Pedido</h2>
-            <div id="productos">
-                <div class="producto">
-                    <span>Alimento Premium para Perros 5kg</span>
-                    <span>$499.00</span>
+            <div class="row gutters-sm">
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="User Avatar"
+                                class="rounded-circle" width="150">
+                            <h4 class="mt-3">Fenix Díaz</h4>
+                            <p class="text-muted font-size-sm">Aguascalientes, Aguascalientes, Mx.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="producto">
-                    <span>Juguete Interactivo para Gatos</span>
-                    <span>$199.00</span>
+
+                <div class="col-md-8">
+                    <div class="card mb-3">
+                        <div class="card-body">
+
+                            <form id="editProfileForm">
+                                <div class="row mb-3">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Full Name</h6>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="fullName" class="form-control" value="Fenix Díaz" />
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Email</h6>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <input type="email" name="email" class="form-control" value="fenixdiaz@gmail.com" />
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Phone</h6>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <input type="tel" name="phone" class="form-control" value="(449) 125-4466" />
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Mobile</h6>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <input type="tel" name="mobile" class="form-control" value="(449) 251-5432" />
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Address</h6>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="address" class="form-control" value="Aguascalientes, Aguascalientes, Mx." />
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <button type="submit" class="btn btn-success">Guardar</button>
+                                        <a href="userprofile.html" class="btn btn-danger">Cancelar</a>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+
+                    <div class="row gutters-sm">
+                        <div class="col-sm-6 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h6 class="card-title">Reviews</h6>
+                                    <p><strong>Product 1:</strong> Excellent quality. 5 stars.</p>
+                                    <p><strong>Product 2:</strong> Good service, although shipping took a while. 4 stars.</p>
+                                    <p><strong>Producto 3:</strong> Average quality, but good price. 3 stars.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h6 class="card-title">Recent Orders</h6>
+                                    <p><strong>Order #12345:</strong> 2 x Product A - MXN $980.00</p>
+                                    <p><strong>Order #12346:</strong> 1 x Product B - MXN $580.00</p>
+                                    <p><strong>Order #12347:</strong> 3 x Product C - MXN $1200.00</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
-            <p><strong>Total: <span id="totalPedido">$698.00</span></strong></p>
-        </section>
 
-        <section class="seccion">
-            <h2>Seguimiento del Pedido</h2>
-            <div class="seguimiento">
-                <div class="estado">
-                    <span class="activo"><i class="fa fa-check-circle"></i> Confirmado</span>
-                    <span class="activo"><i class="fa fa-box"></i> Preparando</span>
-                    <span class="activo"><i class="fa fa-truck"></i> En camino</span>
-                    <span><i class="fa fa-home"></i> Entregado</span>
-                </div>
-            </div>
-            <div class="detalle-estado">
-                <p><strong>Confirmado:</strong> Pedido confirmado el <strong>17 de julio de 2025</strong> a las
-                    <strong>19:25 hrs</strong> en Guadalajara, Jalisco.</p>
-                <p><strong>Preparando:</strong> Tu pedido está siendo preparado en nuestro centro de distribución.</p>
-                <p><strong>En camino:</strong> El paquete salió del almacén hacia <em>Calle Independencia 742, Col.
-                        Americana, Guadalajara, Jalisco</em>.</p>
-                <p><strong>Entregado:</strong> Dirección final: <em>MIRADOR DE LAS CULTURAS, CULTURA OLMECA 111 INT 25,
-                        Aguascalientes, México</em>.</p>
-            </div>
-        </section>
-
-        <section class="seccion">
-            <h2>Información de Pago</h2>
-            <div class="info">
-                <p><strong>Método de Pago:</strong> Tarjeta de Crédito (MasterCard **** 7845)</p>
-                <p><strong>Nombre en la Tarjeta:</strong> Ángel Moreno</p>
-                <p><strong>Fecha de Pago:</strong> 17 de julio de 2025 - 19:20 hrs</p>
-                <p><strong>Estado del Pago:</strong> <span style="color:green; font-weight:bold;">Pago confirmado</span>
-                </p>
-                <p><strong>Transacción:</strong> #PP-AQG-22150114</p>
-                <p><strong>Total Pagado:</strong> $698.00 MXN (IVA incluido)</p>
-                <p><strong>Verificado por:</strong> Bancomer - BBVA</p>
-            </div>
-        </section>
-
+        </div>
     </div>
 
-    <!-- FOOTER -->
+    <!-- FOOTER (igual que userprofile.html) -->
     <footer id="footer">
-        <!-- top footer -->
         <div class="section">
             <div class="container">
                 <div class="row">
-                    <!-- About Us -->
                     <div class="col-md-3 col-xs-6">
                         <div class="footer">
                             <h3 class="footer-title">Sobre Nosotros</h3>
-                            <p>PetPalace es una tienda en línea para productos de mascotas, con directorio de
-                                veterinarios y estilistas para tus compañeros peludos.</p>
+                            <p>PetPalace es una tienda en línea para productos de mascotas, con directorio de veterinarios y estilistas para tus compañeros peludos.</p>
                             <ul class="footer-links">
                                 <li><a href="#"><i class="fa fa-map-marker"></i> ITA, Aguascalientes, México</a></li>
                                 <li><a href="#"><i class="fa fa-phone"></i> +52 449 928 9336</a></li>
@@ -229,7 +232,6 @@
                         </div>
                     </div>
 
-                    <!-- Categorías -->
                     <div class="col-md-3 col-xs-6">
                         <div class="footer">
                             <h3 class="footer-title">Categorías</h3>
@@ -245,7 +247,6 @@
 
                     <div class="clearfix visible-xs"></div>
 
-                    <!-- Información -->
                     <div class="col-md-3 col-xs-6">
                         <div class="footer">
                             <h3 class="footer-title">Información</h3>
@@ -258,7 +259,6 @@
                         </div>
                     </div>
 
-                    <!-- Servicios -->
                     <div class="col-md-3 col-xs-6">
                         <div class="footer">
                             <h3 class="footer-title">Servicio</h3>
@@ -267,9 +267,7 @@
                                 <li><a href="#">Carrito</a></li>
                                 <li><a href="#">Wishlist</a></li>
                                 <li><a href="#">Ayuda</a></li>
-                                <li><a href="https://maps.app.goo.gl/k5ZtDzjFcVZyq3sV6" target="_blank">
-                                        <i class="fas fa-map-marked-alt"></i> Ubicación</a>
-                                </li>
+                                <li><a href="https://maps.app.goo.gl/k5ZtDzjFcVZyq3sV6" target="_blank"><i class="fas fa-map-marked-alt"></i> Ubicación</a></li>
                             </ul>
                         </div>
                     </div>
@@ -277,12 +275,10 @@
             </div>
         </div>
 
-        <!-- bottom footer -->
         <div id="bottom-footer" class="section">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <!-- Iconos de métodos de pago -->
                         <ul class="footer-payments">
                             <li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
                             <li><a href="#"><i class="fa fa-credit-card"></i></a></li>
@@ -302,38 +298,19 @@
             </div>
         </div>
     </footer>
-    <!-- FOOTER -->
 
+    <!-- Scripts Bootstrap y jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
-    <!-- Redes sociales y soporte -->
-    <div class="social-floating">
-        <!-- Carrito -->
-        <a href="checkout.html" class="floating-cart" title="Ver carrito">
-            <i class="fa fa-shopping-cart"></i>
-            <span class="cart-count">2</span>
-        </a>
-
-        <!-- Facebook -->
-        <a href="https://www.facebook.com/profile.php?id=61578271885148
-" class="facebook" target="_blank" title="Facebook">
-            <i class="fa fa-facebook"></i>
-        </a>
-
-        <!-- WhatsApp -->
-        <a href="https://wa.me/524499289336" class="whatsapp" target="_blank" title="WhatsApp">
-            <i class="fa fa-whatsapp"></i>
-        </a>
-
-        <!-- Instagram -->
-        <a href="https://www.instagram.com/" class="instagram" target="_blank" title="Instagram">
-            <i class="fa fa-instagram"></i>
-        </a>
-
-        <!-- Maps -->
-        <a href="https://maps.google.com" class="maps" target="_blank" title="Ubicación">
-            <i class="fa fa-map-marker"></i>
-        </a>
-    </div>
+    <script>
+        // Simulación de guardar, evitar recarga real con submit
+        document.getElementById('editProfileForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Datos guardados (simulación). Volviendo a perfil...');
+            window.location.href = 'userprofile.html';
+        });
+    </script>
 
 </body>
 

@@ -1935,9 +1935,7 @@ textarea.input {
   margin-top: 30px;
 }
 
-/*=========================================================
-	10 -> NEWSLETTER
-===========================================================*/
+/*=================10 -> NEWSLETTER================*/
 
 #newsletter.section {
   border-top: 2px solid #E4E7ED;
@@ -2227,7 +2225,7 @@ textarea.input {
 
 .social-floating {
   position: fixed;
-  bottom: 20px;
+  bottom: 60px;
   right: 20px;
   display: flex;
   flex-direction: column-reverse;
@@ -2542,4 +2540,72 @@ textarea.input {
   10% { opacity: 1; transform: translateY(0); }
   90% { opacity: 1; }
   100% { opacity: 0; transform: translateY(20px); }
+}
+
+/*DISEÑO COOKIES Y AVISO DE PRIVACIDAD*/
+
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #2c2c2c;
+      color: #fff;
+      padding: 15px 10px;
+      text-align: center;
+      z-index: 10000;
+      font-size: 14px;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .cookie-banner p {
+      display: inline;
+      margin: 0;
+    }
+
+    .cookie-banner a {
+      color: #ab01ee;
+      font-weight: bold;
+      margin-left: 10px;
+      text-decoration: none;
+    }
+
+    .cookie-btn {
+      background-color: #13d302;
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 5px;
+      margin-left: 15px;
+    }
+
+    #aviso-privacidad {
+      border-top: 1px solid #ccc;
+      background-color: #f9f9f9;
+      font-size: 14px;
+      color: #333;
+      padding: 40px;
+    }
+
+    #aviso-privacidad h2 {
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #2c2c2c;
+    }
+
+
+    /*Reseñas */
+    #comunidad h2 {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #2c2c2c;
+}
+
+#comunidad p {
+  font-size: 15px;
+  color: #555;
+}
+
+#comunidad img {
+  margin-bottom: 15px;
+  max-height: 180px;
+  object-fit: cover;
 }

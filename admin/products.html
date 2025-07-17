@@ -2,145 +2,224 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Productos - Panel de Administración</title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/nouislider.min.css">
-    <link rel="stylesheet" href="../css/slick-theme.css">
-    <link rel="stylesheet" href="../css/slick.css">
-    <link rel="stylesheet" href="../css/userprofile.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gestión de Productos - Panel de Administración</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 
 <body>
-    <!-- Contenedor principal -->
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Barra lateral de navegación -->
-            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar">
-                <div class="position-sticky">
-                    <div class="text-center py-4">
-                        <img src="../img/logo6.png" alt="Logo Pet Palace" class="mb-3" style="width: 80px;">
-                        <h4 class="text-white">Administrador</h4>
-                    </div>
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="admin-panel.html">
-                                <i class="fa fa-tachometer"></i> Dashboard
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="clients.html">
-                                <i class="fa fa-users"></i> Usuarios
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="products.html">
-                                <i class="fa fa-paw"></i> Productos
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="orders.html">
-                                <i class="fa fa-shopping-cart"></i> Pedidos
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="statistics.html">
-                                <i class="fa fa-bar-chart"></i> Reportes
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="logs.html">
-                                <i class="fa fa-cog"></i> Bitacoras de Movimientos
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="login.html">
-                                <i class="fa fa-sign-out"></i> Cerrar Sesión
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-
-            <!-- Contenido principal -->
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                <div class="container mt-5">
-                    <h2>Gestión de Productos</h2>
-
-                    <!-- Botones para ABCC -->
-                    <div class="mb-3">
-                        <button class="btn btn-success" data-toggle="modal" data-target="#addProductModal"><i
-                                class="fa fa-plus"></i> Añadir Producto</button>
-                    </div>
-
-                    <!-- Tabla de productos -->
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nombre</th>
-                                <th>Precio</th>
-                                <th>Categoría</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Comida para perros</td>
-                                <td>$25.00</td>
-                                <td>Alimentos</td>
-                                <td>
-                                    <button class="btn btn-warning btn-sm"><i class="fa fa-edit"></i> Editar</button>
-                                    <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Eliminar</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- Modal para añadir producto -->
-                <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="addProductModalLabel">Añadir Producto</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <form>
-                                    <div class="form-group">
-                                        <label for="productName">Nombre</label>
-                                        <input type="text" class="form-control" id="productName" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="productPrice">Precio</label>
-                                        <input type="number" class="form-control" id="productPrice" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="productCategory">Categoría</label>
-                                        <input type="text" class="form-control" id="productCategory" required>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Guardar</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </main>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar">
+        <div class="position-sticky">
+          <div class="text-center py-4">
+            <img src="../img/logo6.png" alt="Logo Pet Palace" class="mb-3" style="width: 80px;" />
+            <h4 class="text-white">Administrador</h4>
+          </div>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="admin-panel.html">
+                <i class="fa fa-tachometer"></i> Dashboard
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="clients.html">
+                <i class="fa fa-users"></i> Usuarios
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white active" href="products.html">
+                <i class="fa fa-paw"></i> Inventario
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="orders.html">
+                <i class="fa fa-shopping-cart"></i> Pedidos
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="statistics.html">
+                <i class="fa fa-bar-chart"></i> Reportes
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="logs.html">
+                <i class="fa fa-cog"></i> Bitácoras de Movimientos
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="login.html">
+                <i class="fa fa-sign-out"></i> Cerrar Sesión
+              </a>
+            </li>
+          </ul>
         </div>
-    </div>
+      </nav>
 
-    <!-- Scripts de Bootstrap -->
-    <script src="js/bootstrap.bundle.min.js"></script>
+      <!-- Main Content -->
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div class="container mt-5">
+          <h2>Gestión de Productos</h2>
+
+          <div class="mb-3">
+            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addProductModal">
+              <i class="fa fa-plus"></i> Añadir Producto
+            </button>
+          </div>
+
+          <table class="table table-bordered align-middle">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Precio ($)</th>
+                <th>Categoría</th>
+                <th>Descripción</th>
+                <th>Stock</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="productsTableBody">
+              <tr>
+                <td>1</td>
+                <td>Collar para perro</td>
+                <td>150.00</td>
+                <td>A</td>
+                <td>Collar resistente y cómodo para perros.</td>
+                <td>10</td>
+                <td>
+                  <button class="btn btn-warning btn-sm btn-edit"><i class="fa fa-edit"></i> Editar</button>
+                  <button class="btn btn-danger btn-sm btn-delete"><i class="fa fa-trash"></i> Eliminar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Comida para gato</td>
+                <td>80.00</td>
+                <td>B</td>
+                <td>Alimento balanceado para gatos adultos.</td>
+                <td>20</td>
+                <td>
+                  <button class="btn btn-warning btn-sm btn-edit"><i class="fa fa-edit"></i> Editar</button>
+                  <button class="btn btn-danger btn-sm btn-delete"><i class="fa fa-trash"></i> Eliminar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Modal Añadir Producto -->
+  <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form id="formAddProduct">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addProductModalLabel">Añadir Producto</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="productName" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="productName" required placeholder="Ejemplo: Juguete para perro" />
+            </div>
+            <div class="mb-3">
+              <label for="productPrice" class="form-label">Precio</label>
+              <input type="number" step="0.01" class="form-control" id="productPrice" required placeholder="Ejemplo: 99.99" />
+            </div>
+            <div class="mb-3">
+              <label for="productCategory" class="form-label">Categoría</label>
+              <select class="form-select" id="productCategory" required>
+                <option value="" disabled selected>Selecciona categoría</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="productDescription" class="form-label">Descripción</label>
+              <textarea class="form-control" id="productDescription" rows="3" required placeholder="Ejemplo: Juguete de caucho para perros pequeños"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="productStock" class="form-label">Stock</label>
+              <input type="number" class="form-control" id="productStock" min="0" required placeholder="Ejemplo: 15" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Manejo simple añadir producto
+    const formAddProduct = document.getElementById('formAddProduct');
+    const productsTableBody = document.getElementById('productsTableBody');
+
+    formAddProduct.addEventListener('submit', e => {
+      e.preventDefault();
+
+      const name = document.getElementById('productName').value.trim();
+      const price = parseFloat(document.getElementById('productPrice').value);
+      const category = document.getElementById('productCategory').value;
+      const description = document.getElementById('productDescription').value.trim();
+      const stock = parseInt(document.getElementById('productStock').value);
+
+      if (!name || isNaN(price) || !category || !description || isNaN(stock)) {
+        alert('Completa todos los campos correctamente');
+        return;
+      }
+
+      let maxId = 0;
+      [...productsTableBody.children].forEach(tr => {
+        const id = parseInt(tr.children[0].textContent);
+        if (id > maxId) maxId = id;
+      });
+      const newId = maxId + 1;
+
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${newId}</td>
+        <td>${name}</td>
+        <td>${price.toFixed(2)}</td>
+        <td>${category}</td>
+        <td>${description}</td>
+        <td>${stock}</td>
+        <td>
+          <button class="btn btn-warning btn-sm btn-edit"><i class="fa fa-edit"></i> Editar</button>
+          <button class="btn btn-danger btn-sm btn-delete"><i class="fa fa-trash"></i> Eliminar</button>
+        </td>
+      `;
+
+      productsTableBody.appendChild(tr);
+      formAddProduct.reset();
+
+      tr.querySelector('.btn-delete').addEventListener('click', () => {
+        if (confirm('¿Eliminar este producto?')) {
+          tr.remove();
+        }
+      });
+    });
+
+    document.querySelectorAll('.btn-delete').forEach(btn => {
+      btn.addEventListener('click', e => {
+        if (confirm('¿Eliminar este producto?')) {
+          e.target.closest('tr').remove();
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>
