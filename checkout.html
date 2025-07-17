@@ -276,10 +276,6 @@
 
                     <div class="input-checkbox">
                         <input type="checkbox" id="terms">
-                        <label for="terms">
-                            <span></span>
-                            I have read and agree to the <a href="#">terms and conditions</a>
-                        </label>
                     </div>
                     <a href="#" class="primary-btn order-submit" id="btnCheckout">Order</a>
                 </div>
@@ -289,42 +285,77 @@
     </div>
     <!-- /SECTION -->
 
-    <!-- Modal del formulario de registro -->
-    <div id="modalRegistro" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="cerrarModal()">&times;</span>
-            <section class="registro">
-                <h2>Regístrate en Pet Palace</h2>
-                <form id="registroForm">
-                    <!-- Campos de registro -->
-                    <label for="nombre">Nombre completo:</label>
-                    <input type="text" id="nombre" name="nombre" required>
+   <!-- Modal del formulario de registro -->
+<div id="modalRegistro" class="modal">
+    <div class="modal-content registro-card">
+        <span class="close-btn" onclick="cerrarModal()">&times;</span>
+        <section class="registro">
+            <h2 class="titulo-modal">Regístrate en <span class="marca">Pet Palace</span></h2>
+            <form id="registroForm" class="formulario-registro">
+                <!-- Campos de registro -->
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
 
-                    <label for="domicilio">Domicilio:</label>
-                    <input type="text" id="domicilio" name="domicilio" required>
+                <label for="domicilio">Domicilio:</label>
+                <input type="text" id="domicilio" name="domicilio" required>
 
-                    <label for="correo">Correo electrónico (Gmail):</label>
-                    <input type="email" id="correo" name="correo" pattern=".+@gmail\.com" required>
+                <label for="correo">Correo electrónico (Gmail):</label>
+                <input type="email" id="correo" name="correo" pattern=".+@gmail\.com" required>
 
-                    <label for="telefono">Teléfono:</label>
-                    <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" required>
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" required>
 
-                    <label for="password">Contraseña:</label>
-                    <input type="password" id="password" name="password" required>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
 
-                    <label for="confirmPassword">Confirmar contraseña:</label>
-                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                <label for="confirmPassword">Confirmar contraseña:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
 
-                    <button type="submit">Registrarse</button>
-                    <p id="mensajeRegistro" class="mensaje-registrado"></p>
+                <div class="terminos-condiciones">
+                    <input type="checkbox" id="aceptaTerminos" required>
+                    <label for="aceptaTerminos">
+                        Acepto los <a href="#" onclick="mostrarTexto('terminos')">términos y condiciones</a> y la 
+                        <a href="#" onclick="mostrarTexto('privacidad')">política de privacidad</a>.
+                    </label>
+                </div>
 
-                    <p class="alternar-modal">
-                        ¿Ya tienes una cuenta? <a href="#" onclick="cambiarAlogin()">Inicia sesión aquí</a>
-                    </p>
-                </form>
-            </section>
-        </div>
+                <div id="textoLegal" style="display: none; background-color: #f5f5f5; padding: 10px; margin-top: 10px; border-radius: 8px;">
+                    <p id="contenidoLegal"></p>
+                    <button type="button" onclick="ocultarTexto()" style="margin-top: 10px;">Cerrar</button>
+                </div>
+
+                <button type="submit" class="btn-registrarse">Registrarse</button>
+                <p id="mensajeRegistro" class="mensaje-registrado"></p>
+
+                <p class="alternar-modal">
+                    ¿Ya tienes una cuenta? <a href="#" onclick="cambiarAlogin()">Inicia sesión aquí</a>
+                </p>
+            </form>
+        </section>
     </div>
+</div>
+
+<script>
+function mostrarTexto(tipo) {
+    const texto = {
+        terminos: `
+            <strong>Términos y condiciones:</strong><br>
+            Al registrarte en Pet Palace, aceptas que la información proporcionada es verídica y te comprometes a cumplir con nuestras políticas de uso.
+            No se permite el uso fraudulento de servicios. Nos reservamos el derecho de cancelar cuentas que infrinjan nuestras normas.`,
+        privacidad: `
+            <strong>Política de privacidad:</strong><br>
+            En Pet Palace, protegemos tus datos personales. La información que proporciones será utilizada exclusivamente para procesar pedidos, contacto y soporte.
+            No compartimos tus datos con terceros sin tu consentimiento explícito.`
+    };
+
+    document.getElementById("contenidoLegal").innerHTML = texto[tipo];
+    document.getElementById("textoLegal").style.display = "block";
+}
+
+function ocultarTexto() {
+    document.getElementById("textoLegal").style.display = "none";
+}
+</script>
 
 
     <!-- Modal de inicio de sesión -->

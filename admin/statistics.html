@@ -2,157 +2,302 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estadísticas - Panel de Administración</title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/nouislider.min.css">
-    <link rel="stylesheet" href="../css/slick-theme.css">
-    <link rel="stylesheet" href="../css/slick.css">
-    <link rel="stylesheet" href="../css/userprofile.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <style>
-        /* Establecer tamaño fijo para los canvas de los gráficos */
-        .card-body canvas {
-            width: 80% !important;
-            /* 80% del tamaño original */
-            height: 300px !important;
-            /* Altura fija de 300px */
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Estadísticas - Panel de Administración</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/font-awesome.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/nouislider.min.css" />
+  <link rel="stylesheet" href="../css/slick-theme.css" />
+  <link rel="stylesheet" href="../css/slick.css" />
+  <link rel="stylesheet" href="../css/userprofile.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    /* Tamaño fijo para canvas de los gráficos */
+    .card-body canvas {
+      width: 80% !important;
+      height: 300px !important;
+    }
+
+    /* Botones para filtro de reportes */
+    #reportTabs .btn {
+      margin-right: 8px;
+    }
+
+    /* Estilos para el filtro de fechas */
+    #dateFilter {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  </style>
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Barra lateral de navegación -->
-            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar">
-                <div class="position-sticky">
-                    <div class="text-center py-4">
-                        <img src="../img/logo6.png" alt="Logo Pet Palace" class="mb-3" style="width: 80px;">
-                        <h4 class="text-white">Administrador</h4>
-                    </div>
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="admin-panel.html">
-                                <i class="fa fa-tachometer"></i> Dashboard
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="clients.html">
-                                <i class="fa fa-users"></i> Usuarios
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="products.html">
-                                <i class="fa fa-paw"></i> Productos
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="orders.html">
-                                <i class="fa fa-shopping-cart"></i> Pedidos
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="statistics.html">
-                                <i class="fa fa-bar-chart"></i> Reportes
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="logs.html">
-                                <i class="fa fa-cog"></i> Bitacoras de Movimientos
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="login.html">
-                                <i class="fa fa-sign-out"></i> Cerrar Sesión
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-
-            <!-- Contenido principal -->
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                <!-- Barra superior -->
-                <div
-                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2"><i class="fa fa-tachometer"></i> Estadísticas</h1>
-                    <div class="btn-toolbar mb-2 mb-md-0">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">
-                            <i class="fa fa-download"></i> Exportar
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Gráfico de Ventas por Mes -->
-                <div class="card mb-4">
-                    <div class="card-header"><i class="fa fa-line-chart"></i> Ventas por Mes</div>
-                    <div class="card-body">
-                        <canvas id="salesChart"></canvas>
-                    </div>
-                </div>
-
-                <!-- Gráfico de Productos Más Vendidos -->
-                <div class="card mb-4">
-                    <div class="card-header"><i class="fa fa-pie-chart"></i> Productos Más Vendidos</div>
-                    <div class="card-body">
-                        <canvas id="productChart"></canvas>
-                    </div>
-                </div>
-            </main>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Barra lateral de navegación -->
+      <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar">
+        <div class="position-sticky">
+          <div class="text-center py-4">
+            <img src="../img/logo6.png" alt="Logo Pet Palace" class="mb-3" style="width: 80px;" />
+            <h4 class="text-white">Administrador</h4>
+          </div>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="admin-panel.html">
+                <i class="fa fa-tachometer"></i> Dashboard
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="clients.html">
+                <i class="fa fa-users"></i> Usuarios
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="products.html">
+                <i class="fa fa-paw"></i> Inventario
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="orders.html">
+                <i class="fa fa-shopping-cart"></i> Pedidos
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white active" href="statistics.html">
+                <i class="fa fa-bar-chart"></i> Reportes
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="logs.html">
+                <i class="fa fa-cog"></i> Bitácoras de Movimientos
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="login.html">
+                <i class="fa fa-sign-out"></i> Cerrar Sesión
+              </a>
+            </li>
+          </ul>
         </div>
+      </nav>
+
+      <!-- Contenido principal -->
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <!-- Barra superior -->
+        <div
+          class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2"><i class="fa fa-bar-chart"></i> Reportes</h1>
+          <div class="btn-toolbar mb-2 mb-md-0">
+            <button id="exportBtn" type="button" class="btn btn-sm btn-outline-secondary">
+              <i class="fa fa-download"></i> Exportar
+            </button>
+          </div>
+        </div>
+
+        <!-- Filtro rango fechas -->
+        <div id="dateFilter" class="mb-3">
+          <label for="startDate" class="form-label mb-0">Desde:</label>
+          <input type="date" id="startDate" class="form-control" style="max-width: 180px;" />
+          <label for="endDate" class="form-label mb-0">Hasta:</label>
+          <input type="date" id="endDate" class="form-control" style="max-width: 180px;" />
+          <button id="applyDateFilter" class="btn btn-primary">Aplicar</button>
+        </div>
+
+        <!-- Botones para filtrar reporte -->
+        <div id="reportTabs" class="mb-4">
+          <button type="button" class="btn btn-primary" data-report="ventas">Ventas</button>
+          <button type="button" class="btn btn-outline-primary" data-report="pedidos">Pedidos</button>
+          <button type="button" class="btn btn-outline-primary" data-report="clientes">Clientes</button>
+          <button type="button" class="btn btn-outline-primary" data-report="inventario">Inventario</button>
+        </div>
+
+        <!-- Contenedor de gráficos -->
+        <div class="card mb-4">
+          <div class="card-header" id="reportTitle"><i class="fa fa-chart-line"></i> Ventas por Mes</div>
+          <div class="card-body">
+            <canvas id="reportChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Tabla de ejemplo para Inventario -->
+        <div id="inventoryTable" class="card mb-4" style="display:none;">
+          <div class="card-header"><i class="fa fa-boxes"></i> Productos con Bajo Inventario</div>
+          <div class="card-body">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Producto</th>
+                  <th>Stock</th>
+                  <th>Estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Juguete de goma</td>
+                  <td>3</td>
+                  <td class="text-danger">Bajo</td>
+                </tr>
+                <tr>
+                  <td>Ropa para perro talla M</td>
+                  <td>0</td>
+                  <td class="text-danger">Agotado</td>
+                </tr>
+                <tr>
+                  <td>Alimento Premium 5kg</td>
+                  <td>7</td>
+                  <td class="text-warning">Moderado</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
     </div>
+  </div>
 
-    <!-- Scripts para gráficos -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        // Gráfico de Ventas por Mes
-        new Chart(document.getElementById('salesChart'), {
-            type: 'line',
-            data: {
-                labels: ['Enero', 'Febrero', 'Marzo'],
-                datasets: [{
-                    label: 'Ventas',
-                    data: [10, 20, 30],
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    fill: true
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false, // Para que se adapte al contenedor
-                scales: {
-                    x: { // Asegura que el eje X sea responsivo
-                        beginAtZero: true
-                    },
-                    y: { // Asegura que el eje Y sea responsivo
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
+  <!-- Scripts para gráficos -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // Referencia al canvas y título
+    const ctx = document.getElementById('reportChart').getContext('2d');
+    const reportTitle = document.getElementById('reportTitle');
+    const inventoryTable = document.getElementById('inventoryTable');
+    const reportTabs = document.getElementById('reportTabs');
+    const exportBtn = document.getElementById('exportBtn');
 
-        // Gráfico de Productos Más Vendidos
-        new Chart(document.getElementById('productChart'), {
-            type: 'pie',
-            data: {
-                labels: ['Producto 1', 'Producto 2', 'Producto 3'],
-                datasets: [{
-                    label: 'Ventas',
-                    data: [12, 19, 3],
-                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false, // Para que se adapte al contenedor
-            }
-        });
-    </script>
+    // Datos simulados para cada reporte
+    const reportsData = {
+      ventas: {
+        title: "Ventas por Mes",
+        type: "line",
+        data: {
+          labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
+          datasets: [{
+            label: 'Ventas (MXN)',
+            data: [12000, 15000, 13000, 17000, 16000, 18000],
+            borderColor: 'rgba(54, 162, 235, 1)',
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            fill: true,
+            tension: 0.3,
+          }]
+        }
+      },
+      pedidos: {
+        title: "Pedidos Completados por Semana",
+        type: "bar",
+        data: {
+          labels: ['Semana 1', 'Semana 2', 'Semana 3', 'Semana 4'],
+          datasets: [{
+            label: 'Pedidos',
+            data: [35, 42, 30, 50],
+            backgroundColor: 'rgba(255, 159, 64, 0.8)'
+          }]
+        }
+      },
+      clientes: {
+        title: "Nuevos Clientes por Mes",
+        type: "line",
+        data: {
+          labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
+          datasets: [{
+            label: 'Clientes Nuevos',
+            data: [15, 22, 18, 25, 20, 30],
+            borderColor: 'rgba(75, 192, 192, 1)',
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            fill: true,
+            tension: 0.3,
+          }]
+        }
+      },
+      inventario: {
+        title: "Productos con Bajo Inventario",
+        // Sin gráfico, mostramos tabla
+      }
+    };
+
+    // Instancia global del gráfico para actualizarlo
+    let currentChart = new Chart(ctx, {
+      type: reportsData.ventas.type,
+      data: reportsData.ventas.data,
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+
+    // Función para actualizar el reporte
+    function updateReport(reportKey) {
+      // Actualizar botones visual
+      Array.from(reportTabs.children).forEach(btn => {
+        btn.classList.toggle('btn-primary', btn.getAttribute('data-report') === reportKey);
+        btn.classList.toggle('btn-outline-primary', btn.getAttribute('data-report') !== reportKey);
+      });
+
+      if (reportKey === "inventario") {
+        // Ocultar canvas y mostrar tabla
+        reportTitle.textContent = reportsData.inventario.title;
+        inventoryTable.style.display = "block";
+        ctx.canvas.style.display = "none";
+      } else {
+        // Mostrar canvas y ocultar tabla
+        reportTitle.textContent = reportsData[reportKey].title;
+        inventoryTable.style.display = "none";
+        ctx.canvas.style.display = "block";
+
+        // Actualizar datos del gráfico
+        currentChart.config.type = reportsData[reportKey].type;
+        currentChart.data = reportsData[reportKey].data;
+        currentChart.update();
+      }
+    }
+
+    // Inicializar reporte por defecto en "ventas"
+    updateReport("ventas");
+
+    // Evento para los botones de filtro
+    reportTabs.addEventListener('click', e => {
+      if (e.target.tagName === "BUTTON") {
+        const selectedReport = e.target.getAttribute('data-report');
+        updateReport(selectedReport);
+      }
+    });
+
+    // Evento botón exportar (aquí solo ejemplo simple)
+    exportBtn.addEventListener('click', () => {
+      alert(`Exportando reporte: ${reportTitle.textContent}`);
+      // Aquí puedes conectar con función real de exportar (PDF, Excel, CSV, etc)
+      console.log(`Exportar datos para: ${reportTitle.textContent}`);
+    });
+
+    // Filtro de rango de fechas (solo actualiza título sin alerta)
+    document.getElementById('applyDateFilter').addEventListener('click', () => {
+      const startDate = document.getElementById('startDate').value;
+      const endDate = document.getElementById('endDate').value;
+
+      if (!startDate || !endDate || startDate > endDate) {
+        // No muestra alertas ni nada
+        return;
+      }
+
+      // Actualiza el título mostrando filtro de fecha
+      // Mantiene el título base sin acumular filtros previos:
+      const currentReportBtn = Array.from(reportTabs.children).find(btn => btn.classList.contains('btn-primary'));
+      if (!currentReportBtn) return;
+      const reportKey = currentReportBtn.getAttribute('data-report');
+      const baseTitle = reportsData[reportKey].title || 'Reporte';
+
+      reportTitle.textContent = `${baseTitle} (Filtrado: ${startDate} a ${endDate})`;
+
+      // Aquí se podría agregar lógica para filtrar datos reales
+    });
+  </script>
 </body>
 
 </html>

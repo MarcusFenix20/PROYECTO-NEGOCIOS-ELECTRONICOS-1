@@ -4,32 +4,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Usuario</title>
+    <title>Registro de Usuario - Pet Palace</title>
 
-    <!-- CSS Libraries -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- CSS Bootstrap y FontAwesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            background: #f5f8fa;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        #register-container {
+            max-width: 500px;
+            margin: 60px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .form-check-label {
+            font-size: 0.95rem;
+        }
+
+        .privacy-box {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            max-height: 150px;
+            overflow-y: auto;
+            display: none;
+            margin-top: 10px;
+        }
+
+        .btn-toggle-privacy {
+            font-size: 0.9rem;
+            color: #007bff;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .btn-toggle-privacy:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body>
     <div id="register-container" class="container">
-        <h2>Registro de Usuario</h2>
-        <div class="form-group">
-            <input type="text" id="username" class="form-control" placeholder="Nombre de Usuario" required>
+        <h2><i class="fas fa-paw"></i> Registro - Pet Palace</h2>
+
+        <div class="form-group mb-3">
+            <label for="username">Nombre de Usuario</label>
+            <input type="text" id="username" class="form-control" placeholder="Ingresa tu nombre" required>
         </div>
-        <div class="form-group">
-            <input type="email" id="email" class="form-control" placeholder="Correo Electrónico" required>
+
+        <div class="form-group mb-3">
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" class="form-control" placeholder="Ejemplo: correo@ejemplo.com" required>
         </div>
-        <div class="form-group">
-            <input type="password" id="password" class="form-control" placeholder="Contraseña" required>
+
+        <div class="form-group mb-3">
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" class="form-control" placeholder="Mínimo 6 caracteres" required>
         </div>
-        <button class="btn btn-success" onclick="register()">Registrarse</button>
-        <p>¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+
+        <!-- Aviso de privacidad -->
+        <div class="form-check mb-2">
+            <input class="form-check-input" type="checkbox" id="privacyCheck">
+            <label class="form-check-label" for="privacyCheck">
+                He leído y acepto el <span class="btn-toggle-privacy" onclick="togglePrivacy()">aviso de privacidad</span>.
+            </label>
+        </div>
+
+        <div id="privacyContent" class="privacy-box">
+            <h5>Aviso de Privacidad - Pet Palace</h5>
+            <p>
+                En Pet Palace, respetamos tu privacidad. Los datos que proporciones serán utilizados únicamente para
+                gestionar tu cuenta, ofrecerte servicios personalizados y enviarte notificaciones importantes. No
+                compartiremos tu información con terceros sin tu consentimiento.
+            </p>
+            <p>
+                Puedes consultar, modificar o eliminar tus datos en cualquier momento. Al registrarte, aceptas nuestras
+                políticas de tratamiento de datos conforme a la legislación vigente.
+            </p>
+        </div>
+
+        <button class="btn btn-success w-100 mt-3" onclick="register()">Registrarse</button>
+
+        <p class="text-center mt-3">¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a></p>
     </div>
 
-    <script src="js/main.js"></script>
+    <script>
+        function togglePrivacy() {
+            const box = document.getElementById("privacyContent");
+            box.style.display = box.style.display === "none" ? "block" : "none";
+        }
+
+        function register() {
+            const accepted = document.getElementById("privacyCheck").checked;
+            if (!accepted) {
+                alert("Debes aceptar el aviso de privacidad para registrarte.");
+                return;
+            }
+
+            // Aquí iría el manejo del registro real si hubiera backend
+            alert("¡Registro exitoso! (simulado)");
+        }
+    </script>
 </body>
 
 </html>
