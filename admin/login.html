@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Inicio de Sesión</title>
 
   <!-- Fuentes y CSS -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-  
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
   <style>
     body {
       font-family: 'Roboto', sans-serif;
@@ -47,7 +48,7 @@
     }
 
     .form-control:focus {
-      box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
     }
 
     .logo-img {
@@ -60,6 +61,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <div class="login-card">
@@ -78,12 +80,12 @@
       </div>
 
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="username" placeholder="Correo o Usuario">
+        <input type="text" class="form-control" id="username" placeholder="Correo o Usuario" required>
         <label for="username"><i class="fa fa-user"></i> Correo o Usuario</label>
       </div>
 
       <div class="form-floating mb-3">
-        <input type="password" class="form-control" id="password" placeholder="Contraseña">
+        <input type="password" class="form-control" id="password" placeholder="Contraseña" required>
         <label for="password"><i class="fa fa-lock"></i> Contraseña</label>
       </div>
 
@@ -104,15 +106,36 @@
   <script>
     document.getElementById('loginForm').addEventListener('submit', function (e) {
       e.preventDefault();
+
       const role = document.getElementById('role').value;
 
       if (role === "admin") {
+        // Redirige directamente al panel del administrador dentro de la misma carpeta
         window.location.href = "admin-panel.html";
       } else {
-        window.location.href = "../index.html";
+        // Simula el acceso del usuario y luego redirige a la página principal
+        const card = document.querySelector('.login-card');
+        card.innerHTML = `
+        <div class="text-center">
+          <img src="../img/logo6.png" alt="Logo" class="logo-img">
+          <h2 class="mb-3 text-success"><i class="fa fa-check-circle"></i> ¡Has accedido como <strong>Fenix Díaz</strong>!</h2>
+          <p>Bienvenido de nuevo a Pet Palace. Serás redirigido en unos segundos...</p>
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Cargando...</span>
+          </div>
+        </div>
+      `;
+
+        // Redirige fuera de la carpeta admin hacia general.html
+        setTimeout(() => {
+          window.location.href = "../general.html";
+        }, 3000);
       }
     });
   </script>
 
+
+
 </body>
+
 </html>
