@@ -2529,71 +2529,85 @@ textarea.input {
   color: white;
   padding: 16px 24px;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   z-index: 9999;
   font-size: 16px;
   animation: fadeInOut 4s ease-in-out forwards;
 }
 
 @keyframes fadeInOut {
-  0% { opacity: 0; transform: translateY(20px); }
-  10% { opacity: 1; transform: translateY(0); }
-  90% { opacity: 1; }
-  100% { opacity: 0; transform: translateY(20px); }
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 }
 
 /*DISEÑO COOKIES Y AVISO DE PRIVACIDAD*/
 
-    .cookie-banner {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background-color: #2c2c2c;
-      color: #fff;
-      padding: 15px 10px;
-      text-align: center;
-      z-index: 10000;
-      font-size: 14px;
-      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-    }
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #2c2c2c;
+  color: #fff;
+  padding: 15px 10px;
+  text-align: center;
+  z-index: 10000;
+  font-size: 14px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
 
-    .cookie-banner p {
-      display: inline;
-      margin: 0;
-    }
+.cookie-banner p {
+  display: inline;
+  margin: 0;
+}
 
-    .cookie-banner a {
-      color: #ab01ee;
-      font-weight: bold;
-      margin-left: 10px;
-      text-decoration: none;
-    }
+.cookie-banner a {
+  color: #ab01ee;
+  font-weight: bold;
+  margin-left: 10px;
+  text-decoration: none;
+}
 
-    .cookie-btn {
-      background-color: #13d302;
-      color: #fff;
-      padding: 8px 14px;
-      border-radius: 5px;
-      margin-left: 15px;
-    }
+.cookie-btn {
+  background-color: #13d302;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 5px;
+  margin-left: 15px;
+}
 
-    #aviso-privacidad {
-      border-top: 1px solid #ccc;
-      background-color: #f9f9f9;
-      font-size: 14px;
-      color: #333;
-      padding: 40px;
-    }
+#aviso-privacidad {
+  border-top: 1px solid #ccc;
+  background-color: #f9f9f9;
+  font-size: 14px;
+  color: #333;
+  padding: 40px;
+}
 
-    #aviso-privacidad h2 {
-      font-weight: bold;
-      margin-bottom: 20px;
-      color: #2c2c2c;
-    }
+#aviso-privacidad h2 {
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #2c2c2c;
+}
 
 
-    /*Reseñas */
-    #comunidad h2 {
+/*Reseñas */
+#comunidad h2 {
   margin-bottom: 10px;
   font-weight: bold;
   color: #2c2c2c;
@@ -2609,3 +2623,33 @@ textarea.input {
   max-height: 180px;
   object-fit: cover;
 }
+
+/*FACTURACION */
+    .botones-factura-flotantes {
+      position: fixed;
+      bottom: 20px;
+      right: 1160px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 9999;
+    }
+
+    .botones-factura-flotantes button {
+      background-color: #2196f3;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .botones-factura-flotantes button:hover {
+      background-color: #1976d2;
+    }
+    .qr {
+      text-align: right;
+    }

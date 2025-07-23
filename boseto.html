@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pet Palace | Todo para tus Mascotas</title>
 
-    <link rel="stylesheet" href="css/styleindex.css">
+    <link rel="stylesheet" href="css/styleboseto.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
 </head>
@@ -24,8 +24,52 @@
     </header>
 
     <!-- CTA flotantes -->
-    <a href="#" class="cta-fixed" id="btnCompra">¡Compra ahora!</a>
+    <a href="index.html" class="cta-fixed" id="btnCompra">¡Compra ahora!</a>
     <a href="#" class="cta-more" onclick="abrirModal()">Más información</a>
+    <!-- Modal informativo -->
+    <div id="modalInformacion" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6); z-index: 1000; font-family: Arial, sans-serif;">
+
+        <div style="background: white; width: 90%; max-width: 600px; margin: 5% auto; padding: 30px; border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.2); position: relative; animation: fadeIn 0.3s ease;">
+
+            <!-- Botón de cierre -->
+            <span onclick="cerrarModal()"
+                style="position: absolute; top: 15px; right: 20px; font-size: 24px; font-weight: bold; cursor: pointer;">&times;</span>
+
+            <!-- Contenido del modal -->
+            <h2 style="color: #3498db; margin-top: 0;">¿Por qué elegir Pet Palace?</h2>
+            <ul style="line-height: 1.7;">
+                <li>🐾 Productos seleccionados para el bienestar de tu mascota.</li>
+                <li>🚚 Entregas seguras en todo México.</li>
+                <li>🔐 Pagos protegidos y datos personales seguros.</li>
+                <li>📦 Seguimiento fácil de tus pedidos.</li>
+            </ul>
+
+            <p style="margin-top: 20px;">
+                Revisa nuestros
+                <a href="terminos.html" target="_blank" style="color: #3498db; font-weight: bold;">Términos y
+                    Condiciones</a> y la
+                <a href="privacidad.html" target="_blank" style="color: #3498db; font-weight: bold;">Política de
+                    Privacidad</a>.
+            </p>
+        </div>
+    </div>
+
+    <!-- Animación suave (opcional) -->
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 
     <!-- Hero -->
     <section class="hero">
@@ -93,63 +137,6 @@
         </div>
     </section>
 
-    <!-- Modal del formulario -->
-    <div id="modalRegistro" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="cerrarModal()">&times;</span>
-            <section class="registro">
-                <h2>Regístrate en Pet Palace</h2>
-                <form id="registroForm">
-                    <label for="nombre">Nombre completo:</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required>
-
-                    <label for="domicilio">Domicilio:</label>
-                    <input type="text" id="domicilio" name="domicilio" placeholder="Ej. Calle 123, Colonia, CP"
-                        required>
-
-                    <label for="correo">Correo electrónico (Gmail):</label>
-                    <input type="email" id="correo" name="correo" pattern=".+@gmail\.com"
-                        placeholder="ejemplo@gmail.com" required>
-
-                    <label for="telefono">Teléfono:</label>
-                    <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}"
-                        placeholder="10 dígitos sin espacios" required>
-
-                    <label for="password">Contraseña:</label>
-                    <input type="password" id="password" name="password" placeholder="Crea una contraseña segura"
-                        required>
-
-                    <label for="confirmPassword">Confirmar contraseña:</label>
-                    <input type="password" id="confirmPassword" name="confirmPassword"
-                        placeholder="Confirma tu contraseña" required>
-
-                    <button type="submit">Registrarse</button>
-                    <p id="mensajeRegistro" class="mensaje-registrado"></p>
-                </form>
-            </section>
-        </div>
-    </div>
-
-    <!-- Modal de inicio de sesión -->
-    <div id="modalLogin" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="cerrarLogin()">&times;</span>
-            <section class="registro">
-                <h2>Iniciar sesión</h2>
-                <form id="loginForm">
-                    <label for="loginTelefono">Teléfono:</label>
-                    <input type="tel" id="loginTelefono" required placeholder="10 dígitos">
-
-                    <label for="loginPassword">Contraseña:</label>
-                    <input type="password" id="loginPassword" required placeholder="Tu contraseña">
-
-                    <button type="submit">Ingresar</button>
-                    <p id="mensajeLogin" class="mensaje-registrado"></p>
-                </form>
-            </section>
-        </div>
-    </div>
-
 
     <!-- Pie de página -->
     <footer class="footer">
@@ -169,7 +156,8 @@
 
     <!-- Redes sociales flotantes -->
     <div class="social-floating">
-        <a href="https://www.facebook.com/profile.php?id=61578271885148" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61578271885148" target="_blank"><i
+                class="fab fa-facebook-f"></i></a>
         <a href="https://wa.me/1234567890" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
         <a href="https://www.instagram.com/" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
         <a href="https://www.google.com/maps/place/Instituto+Tecnológico+de+Aguascalientes" target="_blank"
@@ -180,6 +168,17 @@
     <script src="js/main.js"></script>
     <script src="js/modalboseto.js"></script>
     <script src="js/registroboseto.js"></script>
+
+    <script>
+        function abrirModal() {
+            document.getElementById("modalInformacion").style.display = "block";
+        }
+
+        function cerrarModal() {
+            document.getElementById("modalInformacion").style.display = "none";
+        }
+    </script>
+
 
 </body>
 
