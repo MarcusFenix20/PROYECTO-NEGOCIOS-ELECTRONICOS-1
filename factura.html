@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Pet Palace | Seguimiento de Pedido</title>
+    <title>Factura CFDI - Pet Palace</title>
+
     <!-- Custom stlylesheet -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -23,7 +24,6 @@
 </head>
 
 <body>
-
     <!-- /HEADER -->
     <header>
         <!-- TOP HEADER -->
@@ -140,29 +140,24 @@
 
 
     <div class="container">
-        <h1>Seguimiento de Pedido - Pet Palace</h1>
+        <h1>Factura Electrónica CFDI - Pet Palace</h1>
 
         <section class="seccion">
-            <h2>Resumen del Usuario</h2>
+            <h2>Datos del Emisor y Receptor</h2>
             <div class="info">
-                <p><strong>Nombre:</strong> Angel Fabian Moreno Diaz</p>
-                <p><strong>Correo:</strong> 22150114@aguascalientes.tecnm.mx</p>
-                <p><strong>Teléfono:</strong> +52 449 928 9336</p>
+                <p><strong>RFC Emisor:</strong> PETP800101XYZ</p>
+                <p><strong>Nombre Emisor:</strong> Pet Palace S.A. de C.V.</p>
+                <p><strong>RFC Receptor:</strong> MDAF250803HB1</p>
+                <p><strong>Nombre Receptor:</strong> Ángel Fabian Moreno Díaz</p>
+                <p><strong>Uso CFDI:</strong> G03 - Gastos en general</p>
+                <p><strong>Folio Fiscal:</strong> 123ABC456DEF789GHI</p>
+                <p><strong>Fecha de Emisión:</strong> 17 de julio de 2025 - 19:25 hrs</p>
             </div>
         </section>
 
         <section class="seccion">
-            <h2>Dirección de Envío</h2>
+            <h2>Conceptos Facturados</h2>
             <div class="info">
-                <p><strong>Dirección:</strong> MIRADOR DE LAS CULTURAS, CULTURA OLMECA 111 INT 25</p>
-                <p><strong>Ciudad:</strong> Aguascalientes</p>
-                <p><strong>País:</strong> México</p>
-            </div>
-        </section>
-
-        <section class="seccion">
-            <h2>Productos en tu Pedido</h2>
-            <div id="productos">
                 <div class="producto">
                     <span>Alimento Premium para Perros 5kg</span>
                     <span>$499.00</span>
@@ -171,54 +166,166 @@
                     <span>Juguete Interactivo para Gatos</span>
                     <span>$199.00</span>
                 </div>
-            </div>
-            <p><strong>Total: <span id="totalPedido">$698.00</span></strong></p>
-        </section>
-
-        <section class="seccion">
-            <h2>Seguimiento del Pedido</h2>
-            <div class="seguimiento">
-                <div class="estado">
-                    <span class="activo"><i class="fa fa-check-circle"></i> Confirmado</span>
-                    <span class="activo"><i class="fa fa-box"></i> Preparando</span>
-                    <span class="activo"><i class="fa fa-truck"></i> En camino</span>
-                    <span><i class="fa fa-home"></i> Entregado</span>
-                </div>
-            </div>
-            <div class="detalle-estado">
-                <p><strong>Confirmado:</strong> Pedido confirmado el <strong>17 de julio de 2025</strong> a las
-                    <strong>19:25 hrs</strong> en Guadalajara, Jalisco.
-                </p>
-                <p><strong>Preparando:</strong> Tu pedido está siendo preparado en nuestro centro de distribución.</p>
-                <p><strong>En camino:</strong> El paquete salió del almacén hacia <em>Calle Independencia 742, Col.
-                        Americana, Guadalajara, Jalisco</em>.</p>
-                <p><strong>Entregado:</strong> Dirección final: <em>MIRADOR DE LAS CULTURAS, CULTURA OLMECA 111 INT 25,
-                        Aguascalientes, México</em>.</p>
+                <p><strong>IVA:</strong> $111.68</p>
+                <p><strong>Total:</strong> $809.68 MXN</p>
             </div>
         </section>
 
         <section class="seccion">
             <h2>Información de Pago</h2>
             <div class="info">
-                <p><strong>Método de Pago:</strong> Tarjeta de Crédito (MasterCard **** 7845)</p>
-                <p><strong>Nombre en la Tarjeta:</strong> Ángel Moreno</p>
-                <p><strong>Fecha de Pago:</strong> 17 de julio de 2025 - 19:20 hrs</p>
-                <p><strong>Estado del Pago:</strong> <span style="color:green; font-weight:bold;">Pago confirmado</span>
-                </p>
-                <p><strong>Transacción:</strong> #PP-AQG-22150114</p>
-                <p><strong>Total Pagado:</strong> $698.00 MXN (IVA incluido)</p>
-                <p><strong>Verificado por:</strong> Bancomer - BBVA</p>
+                <p><strong>Método de Pago:</strong> Tarjeta de Débito</p>
+                <p><strong>Forma de Pago:</strong> Pago en una sola exhibición</p>
             </div>
         </section>
+
         <section class="seccion">
-            <h2>Factura Electrónica</h2>
-            <p>¿Necesitas tu comprobante fiscal digital (CFDI)? Puedes solicitar tu factura electrónica con los datos de
-                tu pedido.</p>
-            <button onclick="window.location.href='factura.html'" class="btn-factura">Solicitar factura</button>
+            <h2>Sellos y Certificados</h2>
+            <div class="info">
+                <p><strong>Sello Digital del CFDI:</strong> abc123...XYZ789 (simulado)</p>
+                <p><strong>Sello Digital del SAT:</strong> def456...RST987 (simulado)</p>
+                <p><strong>Certificado SAT:</strong> 000010000005025068</p>
+            </div>
         </section>
 
+        <section class="seccion">
+            <h2>Código QR</h2>
+            <div class="info qr">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?data=CFDI+PetPalace+123ABC456DEF789GHI&size=100x100"
+                    alt="QR CFDI">
+            </div>
+        </section>
+
+        <section class="seccion botones-factura-flotantes">
+            <button onclick="descargarFactura()" class="btn-factura">Descargar Factura</button>
+            <button onclick="enviarFacturaCorreo()" class="btn-factura">Enviar a Correo</button>
+            <div id="mensaje" style="text-align:center; margin-top:10px;"></div>
+        </section>
     </div>
-    
+
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script>
+        const { jsPDF } = window.jspdf;
+
+        async function descargarFactura() {
+            const doc = new jsPDF();
+            const margenIzq = 20;
+            let y = 20;
+
+            // Carga de imágenes como base64
+            const loadImageAsBase64 = (src) => {
+                return new Promise((resolve) => {
+                    const img = new Image();
+                    img.crossOrigin = "Anonymous";
+                    img.onload = () => {
+                        const canvas = document.createElement("canvas");
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+                        const ctx = canvas.getContext("2d");
+                        ctx.drawImage(img, 0, 0);
+                        resolve(canvas.toDataURL("image/png"));
+                    };
+                    img.src = src;
+                });
+            };
+
+            // Carga del logo y QR
+            const logoBase64 = await loadImageAsBase64("img/logo6.png");
+            const qrBase64 = await loadImageAsBase64("https://api.qrserver.com/v1/create-qr-code/?data=CFDI+PetPalace+123ABC456DEF789GHI&size=100x100");
+
+            // Insertar logo y QR
+            doc.addImage(logoBase64, "PNG", 15, 10, 30, 30);
+            doc.addImage(qrBase64, "PNG", 160, 10, 30, 30);
+
+            y += 40;
+
+            doc.setFontSize(16);
+            doc.setTextColor(30, 136, 229);
+            doc.text("Factura Electrónica CFDI", margenIzq, y);
+            y += 10;
+
+            doc.setFontSize(10);
+            doc.setTextColor(0, 0, 0);
+            doc.text(`Emisor: Pet Palace S.A. de C.V. | RFC: PETP800101XYZ`, margenIzq, y); y += 6;
+            doc.text(`Receptor: Ángel Fabian Moreno Díaz | RFC: MDAF250803HB1`, margenIzq, y); y += 6;
+            doc.text(`Uso CFDI: G03 - Gastos en general`, margenIzq, y); y += 6;
+            doc.text(`Folio fiscal: 123ABC456DEF789GHI`, margenIzq, y); y += 6;
+            doc.text(`Fecha de emisión: 2025-07-17 19:25 hrs`, margenIzq, y); y += 10;
+
+            // Encabezado tabla
+            doc.setFontSize(11);
+            doc.setFillColor(200, 200, 200);
+            doc.rect(margenIzq, y, 170, 8, 'F');
+            doc.text("Descripción", margenIzq + 2, y + 6);
+            doc.text("Cantidad", margenIzq + 60, y + 6);
+            doc.text("Precio Unit.", margenIzq + 100, y + 6);
+            doc.text("Importe", margenIzq + 145, y + 6);
+            y += 10;
+
+            const conceptos = [
+                { descripcion: "Alimento Premium para Perros 5kg", cantidad: 1, precio: 499.00 },
+                { descripcion: "Juguete Interactivo para Gatos", cantidad: 1, precio: 199.00 }
+            ];
+
+            let subtotal = 0;
+            conceptos.forEach((item) => {
+                const importe = item.cantidad * item.precio;
+                subtotal += importe;
+
+                doc.text(item.descripcion, margenIzq + 2, y);
+                doc.text(`${item.cantidad}`, margenIzq + 63, y);
+                doc.text(`$${item.precio.toFixed(2)}`, margenIzq + 100, y);
+                doc.text(`$${importe.toFixed(2)}`, margenIzq + 145, y);
+                y += 8;
+            });
+
+            const iva = subtotal * 0.16;
+            const total = subtotal + iva;
+
+            y += 5;
+            doc.setFontSize(11);
+            doc.text(`Subtotal: $${subtotal.toFixed(2)}`, margenIzq + 110, y); y += 6;
+            doc.text(`IVA (16%): $${iva.toFixed(2)}`, margenIzq + 110, y); y += 6;
+            doc.text(`Total: $${total.toFixed(2)} MXN`, margenIzq + 110, y); y += 10;
+
+            // Información de pago
+            doc.setFontSize(10);
+            doc.text(`Método de pago: Tarjeta de Crédito`, margenIzq, y); y += 5;
+            doc.text(`Forma de pago: Pago en una sola exhibición`, margenIzq, y); y += 10;
+
+            // Sellos digitales
+            doc.setFontSize(9);
+            doc.text("Sello digital del CFDI:", margenIzq, y); y += 4;
+            doc.text("abc123xyz... (simulado)", margenIzq + 5, y); y += 5;
+            doc.text("Sello digital del SAT:", margenIzq, y); y += 4;
+            doc.text("def456rst... (simulado)", margenIzq + 5, y); y += 5;
+            doc.text("Certificado SAT: 000010000005025068", margenIzq, y); y += 10;
+
+            // Pie
+            y = 275;
+            doc.setFontSize(9);
+            doc.setTextColor(80);
+            doc.text("Gracias por tu compra en Pet Palace 🐾", margenIzq, y);
+
+            doc.save("factura_pet_palace_oficial.pdf");
+            document.getElementById("mensaje").textContent = "Factura descargada correctamente en formato oficial.";
+        }
+    </script>
+
+    <script>
+        function enviarFacturaCorreo() {
+            const mensaje = document.getElementById("mensaje");
+            mensaje.textContent = "Enviando factura al correo registrado...";
+            setTimeout(() => {
+                mensaje.textContent = "Factura enviada correctamente a tu correo (simulado).";
+            }, 2500);
+        }
+    </script>
+
+
+
     <!-- FOOTER -->
     <footer id="footer">
         <!-- top footer -->
@@ -344,6 +451,8 @@
             <i class="fa fa-map-marker"></i>
         </a>
     </div>
+
+
 
 </body>
 
