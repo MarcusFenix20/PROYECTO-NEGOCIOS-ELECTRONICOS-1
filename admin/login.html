@@ -73,19 +73,19 @@
 
       <div class="mb-3">
         <label for="role" class="form-label"><i class="fa fa-users"></i> Ingresar como</label>
-        <select id="role" class="form-select" required>
+        <select id="role" class="form-select">
           <option value="user">Usuario</option>
           <option value="admin">Administrador</option>
         </select>
       </div>
 
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="username" placeholder="Correo o Usuario" required>
+        <input type="text" class="form-control" id="username" placeholder="Correo o Usuario">
         <label for="username"><i class="fa fa-user"></i> Correo o Usuario</label>
       </div>
 
       <div class="form-floating mb-3">
-        <input type="password" class="form-control" id="password" placeholder="Contraseña" required>
+        <input type="password" class="form-control" id="password" placeholder="Contraseña">
         <label for="password"><i class="fa fa-lock"></i> Contraseña</label>
       </div>
 
@@ -110,31 +110,28 @@
       const role = document.getElementById('role').value;
 
       if (role === "admin") {
-        // Redirige directamente al panel del administrador dentro de la misma carpeta
+        // Redirige al panel del administrador
         window.location.href = "admin-panel.html";
       } else {
-        // Simula el acceso del usuario y luego redirige a la página principal
+        // Simula redirección de usuario normal
         const card = document.querySelector('.login-card');
         card.innerHTML = `
-        <div class="text-center">
-          <img src="../img/logo6.png" alt="Logo" class="logo-img">
-          <h2 class="mb-3 text-success"><i class="fa fa-check-circle"></i> ¡Has accedido como <strong>Fenix Díaz</strong>!</h2>
-          <p>Bienvenido de nuevo a Pet Palace. Serás redirigido en unos segundos...</p>
-          <div class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">Cargando...</span>
+          <div class="text-center">
+            <img src="../img/logo6.png" alt="Logo" class="logo-img">
+            <h2 class="mb-3 text-success"><i class="fa fa-check-circle"></i> ¡Has accedido como <strong>Fenix Díaz</strong>!</h2>
+            <p>Bienvenido de nuevo a Pet Palace. Serás redirigido en unos segundos...</p>
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Cargando...</span>
+            </div>
           </div>
-        </div>
-      `;
+        `;
 
-        // Redirige fuera de la carpeta admin hacia general.html
         setTimeout(() => {
           window.location.href = "../general.html";
         }, 3000);
       }
     });
   </script>
-
-
 
 </body>
 
